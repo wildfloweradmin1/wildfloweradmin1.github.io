@@ -16,7 +16,7 @@ const formatDateWithDay = (dateString) => {
     return `${dayOfWeek}, ${dateString}`;
 };
 
-const events = [
+export const events = [
     {
         name: "Lounge Takeover: Grow Room",
         date: "December 28, 2024",

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const artists = [
+export const artists = [
     {
         name: "sense",
         description: "This is a brief description of Artist 1.",

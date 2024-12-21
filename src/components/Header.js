@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import FontSwitcher, { fonts } from './FontSwitcher';
 import NavFontSwitcher from './NavFontSwitcher';
 
-function Header({ setActivePage, theme }) {
+function Header({ theme }) {
+    const navigate = useNavigate();
     const [currentFont, setCurrentFont] = useState('major-mono-display');
     const [currentNavFont, setCurrentNavFont] = useState('space-mono');
     const currentFontName = fonts.find(f => f.class === currentFont)?.name || currentFont;
@@ -27,7 +29,7 @@ function Header({ setActivePage, theme }) {
                     {['events', 'artists', 'about'].map((page, index) => (
                         <li key={page} style={{ '--item-index': index }}>
                             <button 
-                                onClick={() => setActivePage(page)}
+                                onClick={() => navigate(`/${page}`)}
                                 className={currentNavFont}
                             >
                                 {page.charAt(0).toUpperCase() + page.slice(1)}
