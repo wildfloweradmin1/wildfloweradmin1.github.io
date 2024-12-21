@@ -1,0 +1,379 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+header {
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+header.hidden {
+  transform: translateY(-100%);
+}
+
+header h1 {
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  font-size: 36px;
+  letter-spacing: 5px;
+  transition: font-family 0.3s ease;
+}
+
+header nav ul li button {
+  font-family: 'Finlandica', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 20px;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  animation-delay: calc(var(--item-index) * 0.1s);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+nav ul li button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+nav ul li button:hover {
+  opacity: 0.7;
+}
+
+.content {
+  margin-top: 0;
+  padding: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #000;
+  color: #ffffff;
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+section h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+section p {
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.artist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.artist-row {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-color, #111);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+    color: var(--text-color, #fff);
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-color, #333);
+}
+
+.artist-row.left {
+    flex-direction: row;
+}
+
+.artist-row.right {
+    flex-direction: row-reverse;
+}
+
+.artist-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.artist-info {
+    flex: 1;
+}
+
+.artist-name {
+    font-family: 'Major Mono Display', monospace !important;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.artist-description {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.artist-links a {
+    color: #61dafb;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.artist-links a:hover {
+    text-decoration: underline;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.event-card {
+    background-color: var(--secondary-color, #111);
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-color, #333);
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.event-header h3 {
+    font-size: 28px;
+    margin: 0;
+    color: #fff;
+}
+
+.event-datetime {
+    text-align: right;
+}
+
+.event-date {
+    font-size: 18px;
+    color: var(--accent-color, #61dafb);
+    margin-bottom: 5px;
+}
+
+.event-time {
+    font-size: 16px;
+    color: #888;
+}
+
+.event-details {
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+}
+
+.event-location {
+    margin-top: 15px;
+    color: var(--accent-color, #61dafb);
+    font-size: 14px;
+}
+
+.event-flyer {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.event-flyer img {
+    max-width: 100%;
+    max-height: 600px;
+    border-radius: 4px;
+}
+
+.finlandica-<uniquifier> {
+  font-family: "Finlandica", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.flamenco-light {
+  font-family: "Flamenco", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.flamenco-regular {
+  font-family: "Flamenco", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ticket-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--accent-color, #61dafb);
+    color: var(--primary-color, #000);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.ticket-link:hover {
+    background-color: var(--text-color, #fff);
+    transform: translateY(-2px);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.abril-fatface { font-family: 'Abril Fatface', cursive; }
+.alfa-slab-one { font-family: 'Alfa Slab One', cursive; }
+.bungee-shade { font-family: 'Bungee Shade', cursive; }
+.cinzel-decorative { font-family: 'Cinzel Decorative', cursive; }
+.flamenco { font-family: 'Flamenco', cursive; }
+.great-vibes { font-family: 'Great Vibes', cursive; }
+.lobster { font-family: 'Lobster', cursive; }
+.monoton { font-family: 'Monoton', cursive; }
+.pacifico { font-family: 'Pacifico', cursive; }
+.playfair-display-sc { font-family: 'Playfair Display SC', serif; }
+.poiret-one { font-family: 'Poiret One', cursive; }
+.righteous { font-family: 'Righteous', cursive; }
+.rubik-mono-one { font-family: 'Rubik Mono One', sans-serif; }
+.sacramento { font-family: 'Sacramento', cursive; }
+.special-elite { font-family: 'Special Elite', cursive; }
+.unifraktur-maguntia { font-family: 'UnifrakturMaguntia', cursive; }
+.vampiro-one { font-family: 'Vampiro One', cursive; }
+.yeseva-one { font-family: 'Yeseva One', cursive; }
+
+.major-mono-display { 
+    font-family: 'Major Mono Display', monospace !important; 
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+}
+.space-mono { font-family: 'Space Mono', monospace; }
+.jetbrains-mono { font-family: 'JetBrains Mono', monospace; }
+.ibm-plex-mono { font-family: 'IBM Plex Mono', monospace; }
+.roboto-mono { font-family: 'Roboto Mono', monospace; }
+.source-code-pro { font-family: 'Source Code Pro', monospace; }
+.fira-mono { font-family: 'Fira Mono', monospace; }
+.ubuntu-mono { font-family: 'Ubuntu Mono', monospace; }
+.pt-mono { font-family: 'PT Mono', monospace; }
+.b612-mono { font-family: 'B612 Mono', monospace; }
+
+.satisfy { font-family: 'Satisfy', cursive; }
+.dancing-script { font-family: 'Dancing Script', cursive; }
+.great-vibes { font-family: 'Great Vibes', cursive; }
+.pacifico { font-family: 'Pacifico', cursive; }
+.caveat { font-family: 'Caveat', cursive; }
+.sacramento { font-family: 'Sacramento', cursive; }
+.kalam { font-family: 'Kalam', cursive; }
+.indie-flower { font-family: 'Indie Flower', cursive; }
+.shadows-into-light { font-family: 'Shadows Into Light', cursive; }
+.permanent-marker { font-family: 'Permanent Marker', cursive; }
+.homemade-apple { font-family: 'Homemade Apple', cursive; }
+.yellowtail { font-family: 'Yellowtail', cursive; }
+.mr-dafoe { font-family: 'Mr Dafoe', cursive; }
+.cedarville-cursive { font-family: 'Cedarville Cursive', cursive; }
+.la-belle-aurore { font-family: 'La Belle Aurore', cursive; }
+
+.header-title {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+.petit-formal-script { font-family: 'Petit Formal Script', cursive; }
+.marck-script { font-family: 'Marck Script', cursive; }
+.alex-brush { font-family: 'Alex Brush', cursive; }
+.tangerine { font-family: 'Tangerine', cursive; }
+.rouge-script { font-family: 'Rouge Script', cursive; }
+.pinyon-script { font-family: 'Pinyon Script', cursive; }
+.italianno { font-family: 'Italianno', cursive; }
+.allura { font-family: 'Allura', cursive; }
+.bilbo { font-family: 'Bilbo', cursive; }
+.miss-fajardose { font-family: 'Miss Fajardose', cursive; }
+.lovers-quarrel { font-family: 'Lovers Quarrel', cursive; }
+.ruthie { font-family: 'Ruthie', cursive; }
+.herr-von-muellerhoff { font-family: 'Herr Von Muellerhoff', cursive; }
+.mrs-saint-delafield { font-family: 'Mrs Saint Delafield', cursive; }
+.meddon { font-family: 'Meddon', cursive; }
+
+nav ul li button {
+    font-size: 24px;
+    transition: font-family 0.3s ease;
+}
+
+.gruppo { font-family: 'Gruppo', sans-serif; }
+.syne-mono { font-family: 'Syne Mono', monospace; }
+.nova-mono { font-family: 'Nova Mono', monospace; }
+.xanh-mono { font-family: 'Xanh Mono', monospace; }
+.red-hat-mono { font-family: 'Red Hat Mono', monospace; }
+.zen-kaku { font-family: 'Zen Kaku Gothic New', sans-serif; }
+.urbanist { font-family: 'Urbanist', sans-serif; }
+.chivo-mono { font-family: 'Chivo Mono', monospace; }
+.relative-mono { font-family: 'Red Hat Mono', monospace; } /* Fallback since Relative Mono is premium */
+.hanken-grotesk { font-family: 'Hanken Grotesk', sans-serif; }
+.gemunu-libre { font-family: 'Gemunu Libre', sans-serif; }
+.titillium-web { font-family: 'Titillium Web', sans-serif; }
+.electrolize { font-family: 'Electrolize', sans-serif; }
+.rajdhani { font-family: 'Rajdhani', sans-serif; }
+.quantico { font-family: 'Quantico', sans-serif; }
+
+/* Navigation Fonts */
+.ibm-plex-sans { font-family: 'IBM Plex Sans', sans-serif; }
+.source-sans-pro { font-family: 'Source Sans Pro', sans-serif; }
+.inter { font-family: 'Inter', sans-serif; }
+.work-sans { font-family: 'Work Sans', sans-serif; }
+.dm-sans { font-family: 'DM Sans', sans-serif; }
+.red-hat-display { font-family: 'Red Hat Display', sans-serif; }
+.outfit { font-family: 'Outfit', sans-serif; }
+
+/* Add these new font classes */
+.michroma { font-family: 'Michroma', sans-serif; }
+.syncopate { font-family: 'Syncopate', sans-serif; }
+.orbitron { font-family: 'Orbitron', sans-serif; }
+.audiowide { font-family: 'Audiowide', cursive; }
+.zen-dots { font-family: 'Zen Dots', cursive; }
+.wallpoet { font-family: 'Wallpoet', cursive; }
+.megrim { font-family: 'Megrim', cursive; }
+.unica-one { font-family: 'Unica One', cursive; }
+.poiret-one { font-family: 'Poiret One', cursive; }
+.bungee-outline { font-family: 'Bungee Outline', cursive; }
