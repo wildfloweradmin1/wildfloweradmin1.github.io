@@ -5,7 +5,7 @@ export const artists = [
         name: "sense",
         description: "This is a brief description of Artist 1.",
         image: "/images/artist_sense.jpg",
-        soundcloud: "https://soundcloud.com/sense-1234567890",
+        soundcloud: "https://soundcloud.com/senzsound",
     },
     {
         name: "subjet",
@@ -88,15 +88,21 @@ function Artists() {
             <div className="artist-list">
                 {artists.map((artist, index) => (
                     <div key={artist.name} className={`artist-row ${index % 2 === 0 ? 'left' : 'right'}`}>
-                        <img src={artist.image} alt={artist.name} className="artist-image" />
+                        <div className="artist-image-container">
+                            <img src={artist.image} alt={artist.name} className="artist-image" />
+                            {artist.soundcloud && (
+                                <a href={artist.soundcloud} target="_blank" rel="noopener noreferrer" className="soundcloud-overlay">
+                                    <img 
+                                        src="/images/soundcloudLogo.png" 
+                                        alt="Soundcloud" 
+                                        className="soundcloud-icon" 
+                                    />
+                                </a>
+                            )}
+                        </div>
                         <div className="artist-info">
-                            <div className="artist-name">
-                                {artist.name}
-                            </div>
+                            <div className="artist-name">{artist.name}</div>
                             <div className="artist-description">{artist.description}</div>
-                            <div className="artist-links">
-                                {/* ... rest of the component ... */}
-                            </div>
                         </div>
                     </div>
                 ))}

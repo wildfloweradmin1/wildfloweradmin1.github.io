@@ -91,7 +91,7 @@ function AdminEvents() {
                                     type="text"
                                     value={newEvent.date}
                                     onChange={(e) => setNewEvent({...newEvent, date: e.target.value})}
-                                    placeholder="e.g., December 28, 2024"
+                                    placeholder="e.g., Friday, December 28, 2024"
                                     required
                                 />
                             </div>
