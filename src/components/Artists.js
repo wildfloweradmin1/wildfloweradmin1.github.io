@@ -1,22 +1,24 @@
 import React from 'react';
 
+const BASE_URL = '/j7qf5y/wf';
+
 export const artists = [
     {
         name: "sense",
         description: "This is a brief description of Artist 1.",
-        image: "/images/artist_sense.jpg",
+        image: `${BASE_URL}/images/artist_sense.jpg`,
         soundcloud: "https://soundcloud.com/senzsound",
     },
     {
         name: "subjet",
         description: "This is a brief description of Artist 2.",
-        image: "/images/artist_subjet.jpg",
+        image: `${BASE_URL}/images/artist_subjet.jpg`,
         soundcloud: "https://soundcloud.com/subjet-sosus",
     },
     {
         name: "snuggs",
         description: "This is a brief description of Artist 3.",
-        image: "/images/artist_snuggs.jpg",
+        image: `${BASE_URL}/images/artist_snuggs.jpg`,
         soundcloud: "https://soundcloud.com/snuggs247",
     },
     {
@@ -93,7 +95,7 @@ function Artists() {
                             {artist.soundcloud && (
                                 <a href={artist.soundcloud} target="_blank" rel="noopener noreferrer" className="soundcloud-overlay">
                                     <img 
-                                        src="/images/soundcloudLogo.png" 
+                                        src={`https://prometheus.feralhosting.com/j7qf5y/wf/images/soundcloudLogo.png`}
                                         alt="Soundcloud" 
                                         className="soundcloud-icon" 
                                     />
