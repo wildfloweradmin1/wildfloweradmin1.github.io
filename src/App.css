@@ -1,20 +1,40 @@
+/* Add this at the top of the file with other imports */
+@import url('https://fonts.googleapis.com/css2?family=Krub:wght@300;400;500&display=swap');
+
+/* Add these at the very top of App.css */
+html, 
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+body {
+  overflow-x: hidden; /* Only prevent horizontal scroll */
+}
+
 /* Core Layout */
 .App {
   text-align: center;
-  display: grid;
-  grid-template-rows: auto 1fr;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: visible;
 }
 
 /* Header & Navigation */
 header {
-  padding: 20px;
   position: sticky;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
   backdrop-filter: blur(5px);
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  min-height: 80px;
+  padding: 20px;
+  background-color: var(--primary-color);
 }
 
 header.hidden {
@@ -22,12 +42,14 @@ header.hidden {
 }
 
 header h1 {
-  color: #ffffff;
+  color: var(--text-color);
   margin: 0 0 15px 0;
   font-size: 36px;
   letter-spacing: 5px;
   font-family: 'Major Mono Display', monospace;
   text-transform: lowercase;
+  position: relative;
+  z-index: 1;
 }
 
 nav ul {
@@ -48,12 +70,13 @@ nav ul li {
 nav ul li button {
   background: none;
   border: none;
-  color: #ffffff;
+  color: var(--text-color);
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 300;
   cursor: pointer;
   transition: opacity 0.3s ease;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Manrope', sans-serif;
+  text-transform: lowercase;
 }
 
 nav ul li button:hover {
@@ -61,19 +84,20 @@ nav ul li button:hover {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
+  from { opacity: 0; transform: translateY(-15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* Main Content */
 .content {
+  flex: 1;
   margin-top: 0;
   padding: 20px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #000;
-  color: #ffffff;
+  position: relative;
+  z-index: 0;
 }
 
 /* Artists Section */
@@ -170,13 +194,13 @@ nav ul li button:hover {
 .event-card {
     background-color: var(--secondary-color, #111);
     border-radius: 8px;
-    padding: 25px;
+    padding: 15px;
     transition: all 0.3s ease;
     border: 1px solid var(--accent-color, #333);
 }
 
 .event-datetime {
-    text-align: right;
+    text-align: center;
 }
 
 .event-date {
@@ -214,28 +238,152 @@ nav ul li button:hover {
 
 /* Admin Section */
 .admin-dashboard {
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
+    background-color: var(--primary-color);
     min-height: 100vh;
+    font-family: 'IBM Plex Mono', monospace;
 }
 
-.admin-content {
+.admin-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.admin-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.admin-nav-button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-nav-button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.admin-nav-button.active {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.admin-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-control, .theme-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    background-color: var(--primary-color);
+}
+
+.section-control label, .theme-control label {
+    color: var(--text-color);
+    font-size: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    min-width: 70px;
+}
+
+.section-select, select {
+    padding: 8px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    cursor: pointer;
     flex: 1;
 }
 
-.admin-footer {
-    margin-top: auto;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid var(--accent-color);
+.theme-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    background-color: var(--primary-color);
 }
 
+.theme-control label {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.admin-content {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+}
+
+.admin-events, .admin-artists {
+    width: 100%;
+}
+
+.artists-accordion, .events-accordion {
+    width: 100%;
+}
+
+.artist-header-content, .event-header-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.artist-edit-form, .event-edit-form {
+    width: 100%;
+    padding: 20px;
+    border-top: 1px solid var(--accent-color);
+    background-color: var(--secondary-color);
+}
+
+/* Update existing styles */
 .logout-button {
     padding: 10px 20px;
     background-color: #dc3545;
     color: white;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+/* Event and Artist sections */
+.event-item, .artist-item {
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.event-header, .artist-header {
+    padding: 10px;
     cursor: pointer;
 }
 
@@ -309,13 +457,6 @@ nav ul li button:hover {
 }
 
 /* Add these styles for admin artist thumbnails */
-.artist-header-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex: 1;
-}
-
 .artist-header-content img {
     width: 50px;
     height: 50px;
@@ -346,4 +487,219 @@ nav ul li button:hover {
         width: 40px;
         height: 40px;
     }
+}
+
+/* Add this after the header styles */
+
+.floating-flowers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.flower {
+  position: absolute;
+  font-size: 24px;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9;
+}
+
+.flower:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.flower:nth-child(1) { 
+  left: 10%;
+  animation-delay: -1s;
+}
+
+.flower:nth-child(2) { 
+  left: 30%;
+  animation-delay: -2s;
+}
+
+.flower:nth-child(3) { 
+  left: 50%;
+  animation-delay: -3s;
+}
+
+.flower:nth-child(4) { 
+  left: 70%;
+  animation-delay: -4s;
+}
+
+.flower:nth-child(5) { 
+  left: 90%;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-50%) rotate(-43deg);
+  }
+  50% {
+    transform: translateY(calc(-50% - 15px)) rotate(10deg);
+  }
+}
+
+.ticket-link-pill:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color) !important;
+    transform: scale(1.05);
+}
+
+/* Font Classes */
+.staatliches { font-family: 'Staatliches', cursive; }
+.teko { font-family: 'Teko', sans-serif; }
+.chau-philomene-one { font-family: 'Chau Philomene One', sans-serif; }
+
+/* Update event card header styles */
+.event-card h3 {
+    font-family: var(--event-font, 'Bebas Neue'), sans-serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.font-cycle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.font-cycle-button {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.font-cycle-button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.font-cycle-button:active {
+    transform: scale(0.95);
+}
+
+/* Update existing event card header styles */
+.event-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.event-header h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.artist-header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.expand-icon {
+    font-size: 20px;
+    color: var(--accent-color);
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Update all admin text to use monospace */
+.admin-dashboard h3,
+.admin-dashboard h4,
+.admin-dashboard label,
+.admin-dashboard input,
+.admin-dashboard textarea,
+.admin-dashboard button {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.event-header-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.event-date-abbrev {
+    color: var(--accent-color);
+    font-size: 14px;
+    min-width: 100px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Update existing style */
+.event-header-info h4 {
+    margin: 0;
+    flex: 1;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.artist-header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.event-header-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+/* Make sure the text elements themselves don't have any margins affecting alignment */
+.event-date-abbrev, .event-header-info h4 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.admin-footer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.logout-button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'IBM Plex Mono', monospace;
+    min-width: 120px;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
 }

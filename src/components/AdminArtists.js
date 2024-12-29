@@ -106,6 +106,9 @@ function AdminArtists() {
                                 onClick={() => setExpandedArtist(expandedArtist === artist.id ? null : artist.id)}
                             >
                                 <div className="artist-header-content">
+                                    <span className="expand-icon">
+                                        {expandedArtist === artist.id ? '−' : '+'}
+                                    </span>
                                     <img 
                                         src={artist.image} 
                                         alt={artist.name} 
@@ -113,9 +116,6 @@ function AdminArtists() {
                                     />
                                     <h4>{artist.name}</h4>
                                 </div>
-                                <span className="expand-icon">
-                                    {expandedArtist === artist.id ? '−' : '+'}
-                                </span>
                             </div>
                             {expandedArtist === artist.id && (
                                 <div className="artist-edit-form">

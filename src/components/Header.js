@@ -6,6 +6,13 @@ function Header({ theme }) {
 
     return (
         <header style={{ backgroundColor: theme.header }}>
+            <div className="floating-flowers">
+                <div className="flower">🌸</div>
+                <div className="flower">🌸</div>
+                <div className="flower">🌸</div>
+                <div className="flower">🌸</div>
+                <div className="flower">🌸</div>
+            </div>
             <div className="header-title">
                 <h1>wildflower arts collective</h1>
             </div>

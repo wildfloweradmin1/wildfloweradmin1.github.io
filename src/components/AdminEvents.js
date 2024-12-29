@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { events as initialEvents } from './Events';
 import FileUpload from './FileUpload';
 
+const formatDateAbbrev = (dateString) => {
+    const date = new Date(dateString);
+    const month = date.toLocaleString('default', { month: 'short' });
+    const day = date.getDate();
+    const year = date.getFullYear();
+    return `${month} ${day}, ${year}`;
+};
+
 function AdminEvents() {
     const [events, setEvents] = useState([]);
     const [newEvent, setNewEvent] = useState({
@@ -18,16 +26,23 @@ function AdminEvents() {
 
     useEffect(() => {
         const savedEvents = JSON.parse(localStorage.getItem('events'));
+        let eventsToUse;
+        
         if (savedEvents && savedEvents.length > 0) {
-            setEvents(savedEvents);
+            eventsToUse = savedEvents;
         } else {
-            const eventsWithIds = initialEvents.map(event => ({
+            eventsToUse = initialEvents.map(event => ({
                 ...event,
                 id: Date.now() + Math.random()
             }));
-            setEvents(eventsWithIds);
-            localStorage.setItem('events', JSON.stringify(eventsWithIds));
         }
+
+        const sortedEvents = eventsToUse.sort((a, b) => {
+            return new Date(a.date) - new Date(b.date);
+        });
+
+        setEvents(sortedEvents);
+        localStorage.setItem('events', JSON.stringify(sortedEvents));
     }, []);
 
     const handleSubmit = (e) => {
@@ -68,10 +83,12 @@ function AdminEvents() {
                     className="event-header"
                     onClick={() => setIsAddEventExpanded(!isAddEventExpanded)}
                 >
-                    <h4>Add New Event</h4>
-                    <span className="expand-arrow">
-                        {isAddEventExpanded ? '▼' : '▶'}
-                    </span>
+                    <div className="artist-header-content">
+                        <span className="expand-icon">
+                            {isAddEventExpanded ? '−' : '+'}
+                        </span>
+                        <h4>Add New Event</h4>
+                    </div>
                 </div>
                 {isAddEventExpanded && (
                     <div className="event-edit-form">
@@ -153,10 +170,17 @@ function AdminEvents() {
                                 className="event-header"
                                 onClick={() => setExpandedEvent(expandedEvent === event.id ? null : event.id)}
                             >
-                                <h4>{event.name}</h4>
-                                <span className="expand-arrow">
-                                    {expandedEvent === event.id ? '▼' : '▶'}
-                                </span>
+                                <div className="artist-header-content">
+                                    <span className="expand-icon">
+                                        {expandedEvent === event.id ? '−' : '+'}
+                                    </span>
+                                    <div className="event-header-info">
+                                        <span className="event-date-abbrev">
+                                            {formatDateAbbrev(event.date)}
+                                        </span>
+                                        <h4>{event.name}</h4>
+                                    </div>
+                                </div>
                             </div>
                             {expandedEvent === event.id && (
                                 <div className="event-edit-form">

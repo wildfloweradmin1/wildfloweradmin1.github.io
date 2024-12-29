@@ -7,7 +7,6 @@ import Artists from './components/Artists';
 import About from './components/About';
 import Login from './components/Login';
 import AdminDashboard from './components/AdminDashboard';
-import ThemeSwitcher from './components/ThemeSwitcher';
 import { themes } from './themes';
 
 function App() {
@@ -22,12 +21,11 @@ function App() {
     }, [currentTheme]);
 
     return (
-        <Router>
+        <Router basename="/j7qf5y/wf">
             <div className="App" style={{
                 backgroundColor: themes[currentTheme].primary,
                 color: themes[currentTheme].text
             }}>
-                <ThemeSwitcher currentTheme={currentTheme} setTheme={setCurrentTheme} />
                 <Header theme={themes[currentTheme]} />
                 <main className="content" style={{
                     backgroundColor: themes[currentTheme].primary,
@@ -38,21 +36,20 @@ function App() {
                         <Route path="/events" element={<Events />} />
                         <Route path="/artists" element={<Artists />} />
                         <Route path="/about" element={<About />} />
-                        <Route 
-                            path="/admin" 
-                            element={
-                                isLoggedIn ? (
-                                    <AdminDashboard 
-                                        onLogout={() => {
-                                            setIsLoggedIn(false);
-                                            localStorage.removeItem('isLoggedIn');
-                                        }}
-                                    />
-                                ) : (
-                                    <Login onLogin={setIsLoggedIn} />
-                                )
-                            } 
-                        />
+                        <Route path="/admin" element={
+                            isLoggedIn ? (
+                                <AdminDashboard 
+                                    onLogout={() => {
+                                        setIsLoggedIn(false);
+                                        localStorage.removeItem('isLoggedIn');
+                                    }}
+                                    currentTheme={currentTheme}
+                                    setTheme={setCurrentTheme}
+                                />
+                            ) : (
+                                <Login onLogin={setIsLoggedIn} />
+                            )
+                        } />
                         <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
                 </main>
