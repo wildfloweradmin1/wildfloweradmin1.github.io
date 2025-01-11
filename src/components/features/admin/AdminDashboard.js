@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import AdminEvents from './AdminEvents';
 import AdminArtists from './AdminArtists';
-import ThemeSwitcher from './ThemeSwitcher';
+import './admin.css';
 
-function AdminDashboard({ onLogout, currentTheme, setTheme }) {
+function AdminDashboard({ onLogout }) {
     const [activeSection, setActiveSection] = useState('events');
 
     return (
@@ -20,10 +20,6 @@ function AdminDashboard({ onLogout, currentTheme, setTheme }) {
                             <option value="events">Events</option>
                             <option value="artists">Artists</option>
                         </select>
-                    </div>
-                    <div className="theme-control">
-                        <label>Theme:</label>
-                        <ThemeSwitcher currentTheme={currentTheme} setTheme={setTheme} />
                     </div>
                 </div>
             </div>

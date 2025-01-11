@@ -1,11 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Header.css';
 
-function Header({ theme }) {
+function Header() {
     const navigate = useNavigate();
 
     return (
-        <header style={{ backgroundColor: theme.header }}>
+        <header>
             <div className="floating-flowers">
                 <div className="flower">🌸</div>
                 <div className="flower">🌸</div>
@@ -23,7 +24,7 @@ function Header({ theme }) {
                             <button 
                                 onClick={() => navigate(`/${page}`)}
                             >
-                                {page.charAt(0).toUpperCase() + page.slice(1)}
+                                {page}
                             </button>
                         </li>
                     ))}

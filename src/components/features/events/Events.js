@@ -1,20 +1,7 @@
 import React from 'react';
-
-// Add a base URL constant
-const BASE_URL = process.env.PUBLIC_URL; // This will use the homepage path from package.json
-
-// Helper function to get day of week
-const getDayOfWeek = (dateString) => {
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const date = new Date(dateString);
-    return days[date.getDay()];
-};
-
-// Helper function to format the full date string
-const formatDateWithDay = (dateString) => {
-    const dayOfWeek = getDayOfWeek(dateString);
-    return `${dayOfWeek}, ${dateString}`;
-};
+import './Events.css';
+import config from '../../../config/env';
+import { formatDateWithDay } from '../../../utils/dateFormatters';
 
 export const events = [
     {
@@ -23,7 +10,7 @@ export const events = [
         time: "9:00 PM - 2:00 AM",
         description: "An evening of art, music, and creative expression featuring local artists.",
         location: "The Lounge",
-        flyer: `${BASE_URL}/images/dec28lounge.jpg`,
+        flyer: `${config.publicUrl}/images/dec28lounge.jpg`,
         ticketLink: "https://blackboxdenver.co/events/wildflower-collective-dec28"
     },
     {
@@ -32,7 +19,7 @@ export const events = [
         time: "9:00 PM - 2:00 AM",
         description: "An evening of art, music, and creative expression featuring local artists.",
         location: "The Lounge",
-        flyer: `${BASE_URL}/images/jan25lounge.png`,
+        flyer: `${config.publicUrl}/images/jan25lounge.png`,
         ticketLink: "https://blackboxdenver.co/events/wildflower-collective-jan25"
     },
     {

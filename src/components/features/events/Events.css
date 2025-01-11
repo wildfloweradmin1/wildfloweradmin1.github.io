@@ -1,0 +1,72 @@
+/* Events Section */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.event-card {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-color);
+}
+
+.event-datetime {
+    text-align: center;
+}
+
+.event-date {
+    font-size: 18px;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.event-time {
+    font-size: 16px;
+    color: #888;
+}
+
+.event-details {
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.event-location {
+    margin-top: 15px;
+    color: var(--accent-color);
+    font-size: 14px;
+}
+
+.event-flyer {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.event-flyer img {
+    max-width: 100%;
+    max-height: 600px;
+    border-radius: 4px;
+}
+
+.ticket-link-pill {
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Krub', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid var(--accent-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 10px 30px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.ticket-link-pill:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    transform: scale(1.05);
+} 

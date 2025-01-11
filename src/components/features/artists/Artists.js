@@ -1,39 +1,43 @@
 import React from 'react';
+import './Artists.css';
+import config from '../../../config/env';
 
-const BASE_URL = '/j7qf5y/wf';
+console.log('Base URL:', process.env.REACT_APP_BASE_URL);
+console.log('Public URL:', config.publicUrl);
+console.log('Image path:', `${config.publicUrl}/images/artist_sense.jpg`);
 
 export const artists = [
     {
         name: "sense",
         description: "This is a brief description of Artist 1.",
-        image: `${BASE_URL}/images/artist_sense.jpg`,
+        image: `${config.publicUrl}/images/artist_sense.jpg`,
         soundcloud: "https://soundcloud.com/senzsound",
     },
     {
         name: "subjet",
         description: "This is a brief description of Artist 2.",
-        image: `${BASE_URL}/images/artist_subjet.jpg`,
+        image: `${config.publicUrl}/images/artist_subjet.jpg`,
         soundcloud: "https://soundcloud.com/subjet-sosus",
     },
     {
         name: "snuggs",
         description: "This is a brief description of Artist 3.",
-        image: `${BASE_URL}/images/artist_snuggs.jpg`,
+        image: `${config.publicUrl}/images/artist_snuggs.jpg`,
         soundcloud: "https://soundcloud.com/snuggs247",
     },
     {
-        name: "iyasu",
+        name: "peanut",
         description: "This is a brief description of Artist 4.",
         image: "https://picsum.photos/seed/artist4/150",
         soundcloud: "https://soundcloud.com/iyasubassproduction",
     },
     {
-        name: "Artist Name 5",
+        name: "iyasu",
         description: "This is a brief description of Artist 5.",
         image: "https://picsum.photos/seed/artist5/150",
     },
     {
-        name: "Artist Name 6",
+        name: "glich",
         description: "This is a brief description of Artist 6.",
         image: "https://picsum.photos/seed/artist6/150",
     },
@@ -95,7 +99,7 @@ function Artists() {
                             {artist.soundcloud && (
                                 <a href={artist.soundcloud} target="_blank" rel="noopener noreferrer" className="soundcloud-overlay">
                                     <img 
-                                        src={`https://prometheus.feralhosting.com/j7qf5y/wf/images/soundcloudLogo.png`}
+                                        src={`${config.publicUrl}/images/soundcloudLogo.png`}
                                         alt="Soundcloud" 
                                         className="soundcloud-icon" 
                                     />

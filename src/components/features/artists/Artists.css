@@ -1,0 +1,82 @@
+/* Artists Section */
+.artist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.artist-row {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-color);
+}
+
+.artist-row.left {
+    flex-direction: row;
+}
+
+.artist-row.right {
+    flex-direction: row-reverse;
+}
+
+.artist-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.artist-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.artist-info {
+    flex: 1;
+}
+
+.artist-name {
+    font-family: 'Major Mono Display', monospace !important;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.artist-description {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Soundcloud Integration */
+.soundcloud-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    opacity: 0.9;
+}
+
+.soundcloud-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.artist-image-container:hover .soundcloud-overlay {
+    transform: scale(1.1);
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.9);
+} 

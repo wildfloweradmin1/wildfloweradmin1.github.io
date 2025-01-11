@@ -1,0 +1,19 @@
+/* Typography styles */
+@import url('https://fonts.googleapis.com/css2?family=Krub:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+.admin-dashboard {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+header h1 {
+    font-family: 'Major Mono Display', monospace;
+    text-transform: lowercase;
+}
+
+nav ul li button {
+    font-family: 'Manrope', sans-serif;
+    text-transform: lowercase;
+} 
