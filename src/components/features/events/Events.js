@@ -6,20 +6,11 @@ import { formatDateWithDay } from '../../../utils/dateFormatters';
 export const events = [
     {
         name: "The Lounge: Grow Room Monthly Showcase",
-        date: "December 28, 2024",
-        time: "9:00 PM - 2:00 AM",
-        description: "An evening of art, music, and creative expression featuring local artists.",
-        location: "The Lounge",
-        flyer: `${config.publicUrl}/images/dec28lounge.jpg`,
-        ticketLink: "https://blackboxdenver.co/events/wildflower-collective-dec28"
-    },
-    {
-        name: "The Lounge: Grow Room Monthly Showcase",
         date: "January 25, 2025",
         time: "9:00 PM - 2:00 AM",
         description: "An evening of art, music, and creative expression featuring local artists.",
         location: "The Lounge",
-        flyer: `${config.publicUrl}/images/jan25lounge.png`,
+        flyer: `${config.publicUrl}/public/images/jan25lounge.png`,
         ticketLink: "https://blackboxdenver.co/events/wildflower-collective-jan25"
     },
     {
@@ -28,10 +19,10 @@ export const events = [
         time: "9:00 PM - 2:00 AM",
         description: "An evening of art, music, and creative expression featuring local artists.",
         location: "Community Workshop Space",
-        flyer: "https://picsum.photos/400/600",
-        ticketLink: "https://tickets.example.com/workshop"
+        flyer: `${config.publicUrl}/public/images/feb15thlounge.png`,
+        ticketLink: "https://blackboxdenver.co/events/wildflower-arts-feb15"
     }
-];
+    ];
 
 function Events() {
     return (

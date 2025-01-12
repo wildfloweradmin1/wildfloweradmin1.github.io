@@ -163,11 +163,6 @@
     overflow: hidden;
 }
 
-.event-header, .artist-header {
-    padding: 15px;
-    cursor: pointer;
-}
-
 .event-header-info {
     display: flex;
     align-items: center;
@@ -183,7 +178,7 @@
     font-family: 'IBM Plex Mono', monospace;
 }
 
-.event-header-info h4 {
+.event-header-info h3 {
     margin: 0;
     flex: 1;
     text-align: left;

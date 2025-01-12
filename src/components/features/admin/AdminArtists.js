@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { artists } from '../artists/Artists';
-import config from '../../../config/env';
+
 
 function AdminArtists() {
     const [expandedArtist, setExpandedArtist] = useState(null);

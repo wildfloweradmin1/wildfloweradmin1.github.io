@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { events } from '../events/Events';
-import config from '../../../config/env';
 import { formatDateAbbrev } from '../../../utils/dateFormatters';
 
 function AdminEvents() {

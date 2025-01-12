@@ -21,7 +21,7 @@ export const artists = [
     },
     {
         name: "snuggs",
-        description: "This is a brief description of Artist 3.",
+        description: "Snuggs crafts multi-genre sets with a deep emphasis on the low end. Her blend of dubstep, UKG, break beats, DNB, hip hop and timeless classics creates an immersive experience that resonates with both new wave and old-school enthusiasts alike. \n\nShe began her love for live music in Boston, but has been deep in the scene in Colorado since 2012. A show veteran, she is now elated to give back to the community via fresh mixes, visual arts, grassroots events and volunteering.",
         image: `${config.publicUrl}/images/artist_snuggs.jpg`,
         soundcloud: "https://soundcloud.com/snuggs247",
     },

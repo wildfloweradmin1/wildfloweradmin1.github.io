@@ -102,4 +102,10 @@ nav ul li button:hover {
 .flower:nth-child(5) { 
   left: 90%;
   animation-delay: -5s;
+}
+
+.nav-links a {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  font-style: italic;
 } 
