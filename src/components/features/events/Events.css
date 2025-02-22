@@ -6,19 +6,36 @@
     padding: 20px 0;
 }
 
-/* Event Name */
-div h3 {
-    font-size: 32px;
-    padding: 3px 3px 3px 3px;
-    margin: 14px 0px 14px 0px;
-}
-
+/* Event Card */
 .event-card {
     background-color: var(--secondary-color);
     border-radius: 8px;
     padding: 10px;
     transition: all 0.3s ease;
-    border: 1px solid var(--accent-color);
+    position: relative;
+    border: 2px solid var(--accent-color);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+}
+
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: -6px;
+    bottom: -6px;
+    background: var(--accent-color);
+    z-index: -1;
+    transform: skew(-2deg, 2deg);
+}
+
+/* Event Name */
+.event-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    padding: 3px;
+    margin: 14px 0;
 }
 
 .event-datetime {
@@ -29,6 +46,7 @@ div h3 {
     font-size: 18px;
     color: var(--accent-color);
     margin-bottom: 5px;
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 .event-header {
@@ -43,6 +61,7 @@ div h3 {
 .event-details {
     color: var(--text-color);
     font-size: 18px;
+    margin: 10px;
 }
 
 .event-location {
@@ -80,4 +99,6 @@ div h3 {
     background-color: var(--accent-color);
     color: var(--primary-color);
     transform: scale(1.05);
-} 
+}
+
+/* Remove all the style variations and style switcher related CSS */ 

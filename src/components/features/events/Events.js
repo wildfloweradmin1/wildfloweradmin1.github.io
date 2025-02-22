@@ -5,21 +5,21 @@ import { formatDateWithDay } from '../../../utils/dateFormatters';
 
 export const events = [
     {
-        name: "The Lounge: Grow Room Monthly Showcase",
-        date: "January 25, 2025",
+        name: "Grow Room Monthly Showcase",
+        date: "March 22, 2025",
         time: "9:00 PM - 2:00 AM",
-        description: "An evening of art, music, and creative expression featuring local artists.",
+        description: "Our monthly curated showcase of local artists, producers, and DJs.",
         location: "The Lounge",
-        flyer: `${config.publicUrl}/public/images/jan25lounge.png`,
+        flyer: `${config.publicUrl}/images/mar22lounge.png`,
         ticketLink: "https://blackboxdenver.co/events/wildflower-collective-jan25"
     },
     {
-        name: "The Lounge: Grow Room Monthly Showcase",
-        date: "February 15, 2025",
+        name: "Grow Room Monthly Showcase",
+        date: "April 26, 2025",
         time: "9:00 PM - 2:00 AM",
-        description: "An evening of art, music, and creative expression featuring local artists.",
-        location: "Community Workshop Space",
-        flyer: `${config.publicUrl}/public/images/feb15thlounge.png`,
+        description: "Our monthly curated showcase of local artists, producers, and DJs.",
+        location: "The Lounge ",
+        flyer: `${config.publicUrl}/images/feb15thlounge.png`,
         ticketLink: "https://blackboxdenver.co/events/wildflower-arts-feb15"
     }
     ];
@@ -31,14 +31,14 @@ function Events() {
                 {events.map((event, index) => (
                     <div className="event-card" key={event.name}>
                         <div className="event-header">
-                            <h3 style={{ fontFamily: 'Staatliches' }}>
+                            <h3>
                                 {event.name}
                             </h3>
                             <div className="event-datetime">
-                                <div className="event-date" style={{ fontFamily: 'Roboto' }}>
+                                <div className="event-date">
                                     {formatDateWithDay(event.date)}
                                 </div>
-                                <div className="event-time" style={{ fontFamily: 'Roboto' }}>
+                                <div className="event-time">
                                     {event.time}
                                 </div>
                             </div>
@@ -54,19 +54,6 @@ function Events() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="ticket-link-pill"
-                                    style={{
-                                        textDecoration: 'none',
-                                        display: 'inline-block',
-                                        fontFamily: 'Krub, sans-serif',
-                                        fontSize: '16px',
-                                        cursor: 'pointer',
-                                        border: '2px solid var(--accent-color)',
-                                        backgroundColor: 'var(--secondary-color)',
-                                        color: 'var(--text-color)',
-                                        padding: '10px 30px',
-                                        borderRadius: '25px',
-                                        transition: 'all 0.3s ease'
-                                    }}
                                 >
                                     Get Tickets
                                 </a>

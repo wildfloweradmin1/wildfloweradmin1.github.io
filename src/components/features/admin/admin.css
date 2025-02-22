@@ -178,11 +178,9 @@
     font-family: 'IBM Plex Mono', monospace;
 }
 
-.event-header-info h3 {
-    margin: 0;
-    flex: 1;
-    text-align: left;
-    font-family: 'IBM Plex Mono', monospace;
+.event-header h3 {
+    border: 8px;
+    margin: 8px;
 }
 
 .artist-header-content {

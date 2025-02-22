@@ -19,7 +19,7 @@ function Header() {
             </div>
             <nav>
                 <ul>
-                    {['events', 'artists', 'about'].map((page, index) => (
+                    {['events', 'artists', 'about', 'socials'].map((page, index) => (
                         <li key={page} style={{ '--item-index': index }}>
                             <button 
                                 onClick={() => navigate(`/${page}`)}

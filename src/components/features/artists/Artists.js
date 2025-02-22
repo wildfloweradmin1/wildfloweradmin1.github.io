@@ -2,20 +2,16 @@ import React from 'react';
 import './Artists.css';
 import config from '../../../config/env';
 
-console.log('Base URL:', process.env.REACT_APP_BASE_URL);
-console.log('Public URL:', config.publicUrl);
-console.log('Image path:', `${config.publicUrl}/images/artist_sense.jpg`);
-
 export const artists = [
     {
         name: "sense",
-        description: "This is a brief description of Artist 1.",
+        description: "",
         image: `${config.publicUrl}/images/artist_sense.jpg`,
         soundcloud: "https://soundcloud.com/senzsound",
     },
     {
         name: "subjet",
-        description: "This is a brief description of Artist 2.",
+        description: "",
         image: `${config.publicUrl}/images/artist_subjet.jpg`,
         soundcloud: "https://soundcloud.com/subjet-sosus",
     },
@@ -27,65 +23,40 @@ export const artists = [
     },
     {
         name: "peanut",
-        description: "This is a brief description of Artist 4.",
-        image: "https://picsum.photos/seed/artist4/150",
-        soundcloud: "https://soundcloud.com/iyasubassproduction",
+        description: "",
+        image: `${config.publicUrl}/images/artist_peanut.jpg`,
+        soundcloud: "https://soundcloud.com/peanut-3",
+    },
+    {
+        name: "mama mk",
+        description: "Born and raised in Denver, CO, Mama Mk has been long inspired by the city's deeply rooted music scene. Influenced by electronic artists of all genres, she brings eclectic and upbeat energy to the dancefloor. Focusing on curation and technicality, Mama Mk blends bass, UKG, and house frequencies to create a captivating and immersive experience. ",
+        image: `${config.publicUrl}/images/artist_mamaMK.jpg`,
+        soundcloud: "https://soundcloud.com/mamamk042",
     },
     {
         name: "iyasu",
-        description: "This is a brief description of Artist 5.",
-        image: "https://picsum.photos/seed/artist5/150",
+        description: "",
+        image: `${config.publicUrl}/images/artist_iyasu.jpg`,
+        soundcloud: "https://soundcloud.com/iyasubassproduction",
     },
     {
         name: "glich",
-        description: "This is a brief description of Artist 6.",
-        image: "https://picsum.photos/seed/artist6/150",
+        description: "",
+        image: `${config.publicUrl}/images/artist_glich.jpg`,
+        soundcloud: "https://soundcloud.com/glichofficial",
     },
     {
-        name: "Artist Name 7",
-        description: "This is a brief description of Artist 7.",
+        name: "ghostbow",
+        description: "",
         image: "https://picsum.photos/seed/artist7/150",
+        soundcloud: "https://soundcloud.com/jeffwestcott",
     },
     {
-        name: "Artist Name 8",
-        description: "This is a brief description of Artist 8.",
+        name: "spru",
+        description: "",
         image: "https://picsum.photos/seed/artist8/150",
     },
-    {
-        name: "Artist Name 9",
-        description: "This is a brief description of Artist 9.",
-        image: "https://picsum.photos/seed/artist9/150",
-    },
-    {
-        name: "Artist Name 10",
-        description: "This is a brief description of Artist 10.",
-        image: "https://picsum.photos/seed/artist10/150",
-    },
-    {
-        name: "Artist Name 11",
-        description: "This is a brief description of Artist 11.",
-        image: "https://picsum.photos/seed/artist11/150",
-    },
-    {
-        name: "Artist Name 12",
-        description: "This is a brief description of Artist 12.",
-        image: "https://picsum.photos/seed/artist12/150",
-    },
-    {
-        name: "Artist Name 13",
-        description: "This is a brief description of Artist 13.",
-        image: "https://picsum.photos/seed/artist13/150",
-    },
-    {
-        name: "Artist Name 14",
-        description: "This is a brief description of Artist 14.",
-        image: "https://picsum.photos/seed/artist14/150",
-    },
-    {
-        name: "Artist Name 15",
-        description: "This is a brief description of Artist 15.",
-        image: "https://picsum.photos/seed/artist15/150",
-    }
+
 ];
 
 function Artists() {
