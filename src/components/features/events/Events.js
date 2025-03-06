@@ -7,16 +7,16 @@ export const events = [
     {
         name: "Grow Room Monthly Showcase",
         date: "March 22, 2025",
-        time: "9:00 PM - 2:00 AM",
+        time: "9:00 PM - 1:00 AM",
         description: "Our monthly curated showcase of local artists, producers, and DJs.",
         location: "The Lounge",
         flyer: `${config.publicUrl}/images/mar22lounge.png`,
-        ticketLink: "https://blackboxdenver.co/events/wildflower-collective-jan25"
+        ticketLink: "https://blackboxdenver.co/events/wildflower-arts-mar22"
     },
     {
         name: "Grow Room Monthly Showcase",
         date: "April 26, 2025",
-        time: "9:00 PM - 2:00 AM",
+        time: "9:00 PM - 1:00 AM",
         description: "Our monthly curated showcase of local artists, producers, and DJs.",
         location: "The Lounge ",
         flyer: `${config.publicUrl}/images/feb15thlounge.png`,
@@ -31,7 +31,7 @@ function Events() {
                 {events.map((event, index) => (
                     <div className="event-card" key={event.name}>
                         <div className="event-header">
-                            <h3>
+                            <h3 style={{ fontFamily: 'Roboto Condensed' }}>
                                 {event.name}
                             </h3>
                             <div className="event-datetime">
@@ -49,7 +49,7 @@ function Events() {
                         <div className="event-details">
                             <p>{event.description}</p>
                             {event.ticketLink && (
-                                <a 
+                                <a
                                     href={event.ticketLink}
                                     target="_blank"
                                     rel="noopener noreferrer"

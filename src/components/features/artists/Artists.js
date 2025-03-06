@@ -5,7 +5,7 @@ import config from '../../../config/env';
 export const artists = [
     {
         name: "sense",
-        description: "",
+        description: "Sense (Roger Despres) is a multi genre music producer living in Denver, CO. Originally from Albuquerque, Sense has been in Denver for over a decade now and has crafted a unique community within the underground bass scene. Sense is a community advocate, artist, and one of the original founders of the Wildflower Arts Collective.",
         image: `${config.publicUrl}/images/artist_sense.jpg`,
         soundcloud: "https://soundcloud.com/senzsound",
     },
@@ -35,7 +35,7 @@ export const artists = [
     },
     {
         name: "iyasu",
-        description: "",
+        description: "Iyasu has been a music creator all his life and he strives to create music that tells a story. Always digging deep from his cultural roots - he loves to draw inspiration from organic sounds and combining them with experimental sound design, expansive vocal textures, and boom-bap grooves. He has been involved with the Denver music scene for the last 7 years, helping to start the Wildflower Arts Collective as well as collaborating & providing support for various music collectives such as Pomegranate Sounds & Dub Den Records. He released his debut EP ‘Espial’ on Simic Records in March of 2023 to officially kick off the project.",
         image: `${config.publicUrl}/images/artist_iyasu.jpg`,
         soundcloud: "https://soundcloud.com/iyasubassproduction",
     },
