@@ -4,56 +4,56 @@ export const artists = [
     {
         name: "sense",
         description: "Sense (Roger Despres) is a multi genre music producer living in Denver, CO. Originally from Albuquerque, Sense has been in Denver for over a decade now and has crafted a unique community within the underground bass scene. Sense is a community advocate, artist, and one of the original founders of the Wildflower Arts Collective.",
-        image: `../images/artist_sense.jpg`,
+        image: `../images/artists/artist_sense.jpg`,
         soundcloud: "https://soundcloud.com/senzsound",
     },
     {
         name: "subjet",
         description: "",
-        image: `../images/artist_subjet.jpg`,
+        image: `../images/artists/artist_subjet.jpg`,
         soundcloud: "https://soundcloud.com/subjet-sosus",
     },
     {
         name: "snuggs",
         description: "Snuggs crafts multi-genre sets with a deep emphasis on the low end. Her blend of dubstep, UKG, break beats, DNB, hip hop and timeless classics creates an immersive experience that resonates with both new wave and old-school enthusiasts alike. \n\nShe began her love for live music in Boston, but has been deep in the scene in Colorado since 2012. A show veteran, she is now elated to give back to the community via fresh mixes, visual arts, grassroots events and volunteering.",
-        image: `../images/artist_snuggs.jpg`,
+        image: `../images/artists/artist_snuggs.jpg`,
         soundcloud: "https://soundcloud.com/snuggs247",
     },
     {
         name: "peanut",
         description: "",
-        image: `../images/artist_peanut.jpg`,
+        image: `../images/artists/artist_peanut.jpg`,
         soundcloud: "https://soundcloud.com/peanut-3",
     },
     {
         name: "mama mk",
         description: "Born and raised in Denver, CO, Mama Mk has been long inspired by the city's deeply rooted music scene. Influenced by electronic artists of all genres, she brings eclectic and upbeat energy to the dancefloor. Focusing on curation and technicality, Mama Mk blends bass, UKG, and house frequencies to create a captivating and immersive experience. ",
-        image: `../images/artist_mamaMK.jpg`,
+        image: `../images/artists/artist_mamaMK.jpg`,
         soundcloud: "https://soundcloud.com/mamamk042",
     },
     {
         name: "iyasu",
         description: "Iyasu has been a music creator all his life and he strives to create music that tells a story. Always digging deep from his cultural roots - he loves to draw inspiration from organic sounds and combining them with experimental sound design, expansive vocal textures, and boom-bap grooves. He has been involved with the Denver music scene for the last 7 years, helping to start the Wildflower Arts Collective as well as collaborating & providing support for various music collectives such as Pomegranate Sounds & Dub Den Records. He released his debut EP ‘Espial’ on Simic Records in March of 2023 to officially kick off the project.",
-        image: `../images/artist_iyasu.jpg`,
+        image: `../images/artists/artist_iyasu.jpg`,
         soundcloud: "https://soundcloud.com/iyasubassproduction",
     },
-    {
-        name: "glich",
-        description: "",
-        image: `../images/artist_glich.jpg`,
-        soundcloud: "https://soundcloud.com/glichofficial",
-    },
-    {
-        name: "ghostbow",
-        description: "",
-        image: "https://picsum.photos/seed/artist7/150",
-        soundcloud: "https://soundcloud.com/jeffwestcott",
-    },
-    {
-        name: "spru",
-        description: "",
-        image: "https://picsum.photos/seed/artist8/150",
-    },
+    // {
+    //     name: "glich",
+    //     description: "",
+    //     image: `../images/artists/artist_glich.jpg`,
+    //     soundcloud: "https://soundcloud.com/glichofficial",
+    // },
+    // {
+    //     name: "ghostbow",
+    //     description: "",
+    //     image: "https://picsum.photos/seed/artist7/150",
+    //     soundcloud: "https://soundcloud.com/jeffwestcott",
+    // },
+    // {
+    //     name: "spru",
+    //     description: "",
+    //     image: "https://picsum.photos/seed/artist8/150",
+    // },
 
 ];
 
