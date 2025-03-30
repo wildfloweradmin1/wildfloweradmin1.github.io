@@ -10,7 +10,7 @@ export const events = [
         time: "9:00 PM - 1:00 AM",
         description: "Our monthly curated showcase of local artists, producers, and DJs.",
         location: "The Lounge",
-        flyer: `${config.publicUrl}/images/mar22lounge.png`,
+        flyer: `../images/mar22lounge.png`,
         ticketLink: "https://blackboxdenver.co/events/wildflower-arts-mar22"
     },
     {
@@ -19,7 +19,7 @@ export const events = [
         time: "9:00 PM - 1:00 AM",
         description: "Our monthly curated showcase of local artists, producers, and DJs.",
         location: "The Lounge ",
-        flyer: `${config.publicUrl}/images/feb15thlounge.png`,
+        flyer: `../images/feb15thlounge.png`,
         ticketLink: "https://blackboxdenver.co/events/wildflower-arts-feb15"
     }
     ];
