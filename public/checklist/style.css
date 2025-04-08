@@ -1,0 +1,778 @@
+/* General Styles */
+body {
+    font-family: 'Roboto Condensed', sans-serif; /* RESTORED: Default font */
+    background-color: #1e1f2a; /* Charade (slightly darker) */
+    color: #f4f4f4; 
+    line-height: 1.6;
+    padding: 30px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #f5e8c7; /* Sidecar - light accent */
+    font-weight: 600;
+}
+
+/* Apply Space Grotesk to all headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif !important; /* ADDED !important to ensure override */
+    color: #f4f4f4; /* UPDATED: Changed from #f5e8c7 (Sidecar) to near white */
+}
+
+/* Tab Navigation */
+.tab-navigation {
+    /* Remove styles here, apply to new container */
+    /* Old styles: 
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6; 
+    padding-bottom: 15px;
+    */
+}
+
+/* New container for tabs */
+.tab-navigation-container {
+    display: flex;
+    justify-content: center; /* Center the tabs now */
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #3a3f4b; 
+    padding-bottom: 0;
+}
+
+/* Container for just the tab buttons */
+.tab-buttons-container {
+    display: flex;
+    flex-grow: 1; /* Let the tabs take full width */
+    justify-content: center; /* Center the buttons within the container */
+}
+
+/* Container for the theme toggle REMOVED */
+/*
+.theme-toggle-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+.tab-button {
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #8a9db2;
+    font-size: 1em;
+    font-family: 'Space Grotesk', sans-serif; 
+    transition: background-color 0.2s, color 0.2s;
+    flex-grow: 1;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+}
+
+.tab-button:hover {
+    color: #a6b5c9;
+}
+
+.tab-button.active {
+    color: #ffffff; 
+    font-weight: 600; 
+    border-bottom: 2px solid #5c6575; 
+}
+
+/* Tab Content Area */
+.tab-content {
+    display: none;
+    padding: 20px 0; /* Keep vertical padding */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* NEW/UPDATED: Style for H2 within tab content */
+.tab-content h2 {
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 12px; /* Add consistent bottom margin */
+}
+
+/* Form Styling */
+.form-section-title {
+    color: #8a9db2; 
+    font-size: 1.2em;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #3a3f4b; 
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #8a9db2; 
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.form-group select,
+.form-group textarea,
+.input-wrapper input,
+.input-wrapper select,
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #8a9db2; 
+    background-color: #222936; 
+    color: #f4f4f4; 
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #5c6575; 
+    box-shadow: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder,
+.input-wrapper input::placeholder,
+.input-wrapper select::placeholder,
+.input-group input::placeholder,
+.input-group select::placeholder {
+    color: #5c6575; 
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+    height: 1.1em;
+    width: 1.1em;
+    accent-color: #5c6575; 
+}
+
+/* Buttons */
+button,
+.button {
+    padding: 10px 18px;
+    cursor: pointer;
+    border: 1px solid #8a9db2; 
+    background-color: #3a3f4b;
+    color: #f4f4f4;
+    font-size: 1em;
+    margin-left: 5px;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* NEW: Style for the full-width Add Artist button */
+.add-artist-button-full {
+    width: 100%;        /* Make it full width */
+    margin-top: 15px;   /* Add space above it */
+    margin-left: 0;     /* Override default left margin */
+    text-align: center; /* Center the text */
+    padding: 12px 15px; /* Match input padding */
+    font-weight: 500;   /* Slightly bolder */
+    /* Inherits hover effects from .button */
+}
+
+button:hover,
+.button:hover {
+    background-color: #5c6575; 
+    border-color: #5c6575; 
+    color: #ffffff;
+}
+
+/* Secondary/Delete Button Style */
+button.secondary,
+.button.secondary,
+.delete-button {
+    background-color: transparent;
+    color: #8a9db2; 
+    border: none; 
+}
+
+button.secondary:hover,
+.button.secondary:hover,
+.delete-button:hover {
+    background-color: transparent; 
+    color: #f4f4f4; 
+    border: none; 
+}
+
+/* Delete button */
+.delete-button {
+    color: #ff6b6b; 
+    border: none; 
+    background-color: transparent;
+}
+
+.delete-button:hover {
+    color: #ffffff;
+    background-color: transparent; 
+    border: none; 
+}
+
+/* Add Button Style */
+.add-button {
+    padding: 8px 12px;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background-color: #222936; 
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #3a3f4b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.empty-message {
+    text-align: center;
+    color: #8a9db2; 
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #222936; 
+    border: 1px solid #3a3f4b; 
+}
+
+/* Input Group Styling */
+.input-section,
+.input-group,
+.floating-form {
+    border: 1px solid #3a3f4b;
+    padding: 25px;
+    background-color: #222936;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-group input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.input-group .add-button {
+    flex: 0 0 auto;
+    margin-left: 0;
+}
+
+
+.task-item input[type="checkbox"] {
+    flex-shrink: 0;
+}
+
+.task-text {
+    flex-grow: 1;
+    line-height: 1.2;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #5c6575; 
+}
+
+.task-item .delete-button {
+    flex-shrink: 0;
+    font-size: 0.9em;
+}
+
+/* Remove overly specific date styling for minimalism */
+.task-date { display: none; }
+.task-content-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px; /* Increased gap from 5px to 10px */
+}
+
+.task-content-wrapper input[type="checkbox"] {
+    width: 16px; /* Set explicit width */
+    height: 16px; /* Set explicit height */
+    margin-left: 12px; /* Add left padding for the checkbox */
+}
+
+/* Consistent alignment for list item action buttons */
+li .edit-button,
+li .delete-button {
+    padding: 5px 8px;
+    font-size: 1em;
+    line-height: 1;
+    vertical-align: middle;
+    flex-shrink: 0;
+    border: none; 
+    background: none; 
+}
+
+/* NEW: Remove top/bottom padding from tab content divs */
+#task-content,
+#artists-content,
+#guestlist-content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .tab-button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-group .add-button {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    li {
+        padding: 12px 15px;
+    }
+}
+
+/* Styles for the main content area */
+.main-content-area {
+    padding: 10px;
+    margin-top: -1px;
+    background-color: #222936; 
+    border: 1px solid #3a3f4b; 
+    border-radius: 0 0 6px 6px;
+}
+
+/* Style for Add Item buttons */
+.add-item-button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+    text-align: center;
+    background-color: #3a3f4b;
+    color: #f4f4f4; 
+}
+
+.add-item-button:hover {
+    background-color: #5c6575; 
+    color: #ffffff;
+}
+
+/* Table Styling */
+.artist-table,
+.guestlist-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.artist-table th,
+.artist-table td,
+.guestlist-table th,
+.guestlist-table td {
+    border: 1px solid #3a3f4b;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.artist-table th,
+.guestlist-table th {
+    background-color: #2d334d; /* Dark Blue (custom) */
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #8a9db2; 
+}
+
+/* Actions column usually narrower. This is the edit/delete buttons column */
+.artist-table th:last-child,
+.artist-table td:last-child,
+.guestlist-table th:last-child,
+.guestlist-table td:last-child {
+    text-align: center;
+    width: 100px; /* Increase width to 100px */
+    min-width: 100px; /* Add minimum width */
+    max-width: none; /* Remove max-width constraint */
+    padding: 5px; /* Increase padding a bit */
+}
+
+/* Fix the edit/delete buttons container in Artists tab */
+.artist-table td:last-child div {
+    display: flex;
+    justify-content: space-evenly !important; /* Change from center to space-evenly */
+    gap: 5px; /* Increase gap between buttons */
+}
+
+/* Style for compact action buttons in all sections */
+.edit-button, 
+.delete-button {
+    margin: 0 3px !important; /* Slightly more margin */
+    padding: 4px 6px !important; /* More padding */
+    font-size: 0.9em !important;
+}
+
+/* For task items (which use flexbox) */
+.task-content-wrapper div {
+    margin-left: auto;
+    display: flex;
+    gap: 2px; /* Reduce gap */
+}
+
+/* Add this to style.css to force the inline styles */
+td button.edit-button,
+td button.delete-button {
+    margin-right: 0 !important; /* Override any inline styles */
+}
+
+/* Styling for the edit form within the table */
+.artist-table .artist-edit-form,
+.guestlist-table .guest-edit-form {
+    padding: 15px 10px;
+}
+
+/* Month headers */
+.month-group h3 {
+    color: #f4f4f4; /* UPDATED: Changed from #f5e8c7 (Sidecar) to near white */
+}
+
+/* NEW: Style for informational text */
+.info-text {
+    font-size: 0.9em;
+    color: #8a9db2; 
+    text-align: center;
+}
+
+/* Styling for action buttons below the artist table */
+.artist-action-button {
+    padding: 8px 12px !important; /* Consistent padding */
+    margin-top: 0 !important;      /* Remove potential top margin */
+    flex-grow: 1;                /* Allow buttons to grow and potentially stack evenly */
+    min-width: 200px;            /* Give them a minimum width */
+    text-align: center;          /* Center text */
+    /* Ensure vertical alignment of icon and text */
+    display: inline-flex;        
+    align-items: center;
+    justify-content: center;
+}
+
+/* Original compose button style - remove conflicting styles if any */
+.compose-button {
+    background-color: #3a3f4b;
+    color: #f4f4f4; 
+    /* Ensure it uses .artist-action-button padding now */
+}
+
+.compose-button:hover {
+    background-color: #5c6575; 
+}
+
+/* Ensure secondary button style doesn't override desired artist-action-button styles */
+.artist-action-button.secondary {
+     /* inherits border and color from .button.secondary */
+     /* padding and flex properties are handled by .artist-action-button */
+}
+
+/* Checkbox styling for lists */
+input[type="checkbox"] {
+    accent-color: #5c6575; 
+}
+
+/* UPDATED: Calendar Icon Styles */
+.task-calendar-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 2px; /* ADDED: Add space between flex items */
+    background-color: #ffffff; 
+    padding: 4px; 
+    border: 1px solid #3a3f4b; 
+    border-radius: 3px; 
+    width: 55px; 
+    height: 55px; 
+    flex-shrink: 0;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    position: relative; /* For absolute positioning of the month banner */
+    overflow: hidden; /* Keep the banner within bounds */
+}
+
+/* New style for calendar icons with a month banner */
+.task-calendar-icon.with-month-banner {
+    padding-top: 16px; /* Increased from 14px to accommodate taller banner */
+}
+
+/* Month banner that appears on top of calendar icon */
+.task-calendar-month-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 14px; 
+    background-color: #ff6b6b; 
+    color: #ffffff; 
+    font-size: 0.65em;
+    font-weight: bold;
+    line-height: 14px; /* Match the height for vertical centering */
+    text-align: center;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-shadow: 0px 0px 2px rgba(0,0,0,0.2); /* Add subtle shadow for better readability */
+}
+
+.task-calendar-weekday {
+    font-size: 0.8em; 
+    font-weight: bold;
+    color: #000000; /* Black text */
+    line-height: 1;
+    text-transform: uppercase;
+    display: block;
+    padding: 0;
+    margin: 0; /* REMOVED margin: 4px; */
+    font-family: 'Roboto Condensed', sans-serif; 
+}
+
+.task-calendar-day {
+    font-size: 1.5em; 
+    font-weight: bold;
+    color: #000000; 
+    line-height: 1; 
+    display: block;
+    /* Centering is handled by the parent (.task-calendar-icon) */
+    font-family: 'Roboto Condensed', sans-serif; 
+}
+
+/* UPDATED: Style for the task due time badge inside the icon */
+.task-due-time {
+    font-size: 0.8em; 
+    color: #000000;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0; 
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+/* NEW: Style for month name in calendar icon when due date is in a different month */
+.task-calendar-month {
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #ffffff; 
+    background-color: #5c6575; 
+    text-transform: uppercase;
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    line-height: 1.2;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* General Input Styling (applies to add and edit forms) */
+.input-group input[type="text"],
+.input-group input[type="date"],
+.input-group input[type="time"],
+.task-edit-form input[type="text"],
+.task-edit-form input[type="date"],
+.task-edit-form input[type="time"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #3a3f4b; 
+    background-color: #222936; 
+    color: #f4f4f4; 
+    font-size: 0.95em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    margin: 0; /* Remove default margins */
+}
+
+.input-group input:focus,
+.task-edit-form input:focus {
+    outline: none;
+    border-color: #5c6575; 
+    box-shadow: none;
+}
+
+.input-group input::placeholder,
+.task-edit-form input::placeholder {
+    color: #5c6575; 
+}
+
+/* Style for Date and Time Inputs specifically */
+input[type="date"],
+input[type="time"] {
+    color: #f5e8c7; 
+    accent-color: #f5e8c7;
+    color-scheme: dark; 
+}
+
+/* Specific layout for the input group used for adding tasks */
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-group input[type="text"] {
+    flex-grow: 1; /* Allow text input to take up remaining space */
+    flex-basis: 50%; 
+}
+
+.input-group input[type="date"],
+.input-group input[type="time"] {
+    flex-grow: 0; /* Keep these from growing */
+    flex-shrink: 0; /* Keep these from shrinking */
+    width: auto; /* Allow date/time to size naturally based on content/min-width */
+}
+
+/* ADDED: Specific min-widths for date/time in the top input group */
+.input-group input[type="date"] {
+    min-width: 133px; 
+}
+
+.input-group input[type="time"] {
+    min-width: 100px; /* Keep time input minimum width */
+}
+
+.input-group .add-button {
+    flex-shrink: 0;
+}
+
+/* Task Edit Form Styling */
+.task-edit-form {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Slightly smaller gap for edit form */
+    width: 100%;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+}
+
+.task-edit-form input[type="checkbox"] {
+    flex-shrink: 0;
+    width: auto; /* Override general input width */
+}
+
+.task-edit-form input[type="text"] {
+    flex-grow: 1; /* Take most space */
+    min-width: 150px; /* Prevent getting too small */
+}
+
+.task-edit-form input[type="date"] {
+     width: auto; /* Override general input width */
+     flex-basis: 130px; /* Give it a base size */
+     flex-shrink: 0;
+     min-width: 110px; /* ADDED: Ensure a minimum width for edit form date */
+}
+
+.task-edit-form input[type="time"] {
+     width: auto; 
+     flex-basis: 100px; 
+     flex-shrink: 0;
+     min-width: 80px; 
+}
+
+.task-edit-form .button {
+    padding: 5px 10px; /* Smaller padding for edit buttons */
+    font-size: 0.9em;
+    margin-left: auto; /* Push save/cancel buttons to the right */
+    flex-shrink: 0;
+}
+.task-edit-form .button.secondary {
+    margin-left: 5px; /* Add space between save/cancel */
+}
+
+/* NEW: Style for action icons in tables (SMS, vCard etc.) */
+.action-icon-button {
+    padding: 6px 8px; 
+    font-size: 1em;
+    border: none; 
+    background-color: transparent; 
+    color: #8a9db2; 
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.action-icon-button:hover {
+    color: #f5e8c7; /* Sidecar - hover color */
+    background-color: transparent; /* Keep background transparent on hover */
+}
+
+/* Wrapper for checkbox, task text, and buttons */
+.task-content-wrapper div:last-child {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Individual button styling within the task item */
+.task-item .edit-button,
+.task-item .delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    line-height: 1;
+}
+
+/* Add a container for the table to enable horizontal scrolling on smaller screens */
+.table-container {
+    overflow-x: auto;
+    width: 100%; /* Ensure the container takes up the full width */
+}
+
+/* Month group spacing */
+.month-group {
+    margin-bottom: 7px;
+}
+
