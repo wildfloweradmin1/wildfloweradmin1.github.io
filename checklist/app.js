@@ -176,7 +176,7 @@ const generateTimeOptions = () => {
  * Example: const API_BASE_URL = './api';
  * @type {string}
  */
-const API_BASE_URL = 'https://j7qf5y.prometheus.feralhosting.com/checklist/'; // Chris OKane's server
+const API_BASE_URL = 'https://j7qf5y.prometheus.feralhosting.com/checklist'; // Chris OKane's server
 
 /**
  * Asynchronous function to handle requests to the backend PHP API.
