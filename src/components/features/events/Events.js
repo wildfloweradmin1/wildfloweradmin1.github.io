@@ -6,6 +6,15 @@ import Future from './future/Future';
 
 export const events = [
     {
+        name: "Ego Death b2b Fabdot",
+        date: "2025-05-24",
+        time: "9:00 PM - 1:00 AM",
+        description: "Ego Death b2b Fabdot, Scarien b2b Subjet, Iyasu b2b Sense, Cellenight, Peanut",
+        location: "The Lounge ",
+        flyer: `../images/event-flyers/may24.png`,
+        ticketLink: "https://blackboxdenver.co/events/wildflower-arts-may24"
+    },
+    {
         name: "Grow Room Monthly Showcase",
         date: "2025-04-26",
         time: "9:00 PM - 1:00 AM",
